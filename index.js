@@ -96,12 +96,10 @@ function createProgressSlider(containerId, options = {}) {
             }
         }
 
-        // Création des boutons de navigation
         for (let i = 0; i < slideCount; i++) {
             navContainer.appendChild(createNavButton(i));
         }
-
-        // Gestion du survol
+        
         const sliderElement = document.getElementById(containerId);
         sliderElement.addEventListener('mouseenter', () => {
             isPaused = true;
@@ -114,7 +112,6 @@ function createProgressSlider(containerId, options = {}) {
 
         slider.events.on('indexChanged', updateActiveButton);
 
-        // Initialisation
         updateActiveButton();
     });
 }
